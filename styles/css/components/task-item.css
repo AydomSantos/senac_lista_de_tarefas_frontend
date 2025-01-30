@@ -1,0 +1,62 @@
+@import '../base/var.css';
+
+.tasks{
+    padding: 1rem;
+    border: 2px solid var(--corCinza);
+    border-radius: 1rem;
+    margin: 1.5rem 0;
+}
+
+.task-categorias--container{
+    display: flex;
+    width: 100%;
+    align-items: center;   
+    margin-bottom: 1rem;
+    
+}
+
+.task-categorias--container div{
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--corCinza);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.task-categorias--opcao--prioridade--alta{
+    background-color: var(--corRed);
+    color: #fff;
+    font-weight: bold;
+}
+
+.task-categorias--opcao--prioridade--media{
+    background-color: var(--corAmarela);
+    font-weight: bold;
+    color: #fff;
+}
+
+.task-categorias--opcao--prioridade--baixa{
+    background-color: var(--corVerde);
+    color: #fff;
+    font-weight: bold;
+}
+
+.task-categoria--text{
+    display: flex;
+    align-items: center;
+}
+
+.task-categoria--text .task-categoria--text--p{
+    margin-right: 1rem;
+    padding-right: 0.5rem;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    font-weight: bold;
+    border-right: 2px solid var(--corCinza);
+}
+
+.task-categoria--text .task-categoria--text--spam{
+    font-weight: 200;
+    margin-left: 0.5rem;
+}
