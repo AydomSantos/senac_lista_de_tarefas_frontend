@@ -12,35 +12,39 @@
     width: 100%;
     align-items: center;   
     margin-bottom: 1rem;
+    gap: 10px;
     
 }
 
+
+
 .task-categorias--container div{
-    margin-right: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 4px 8px 4px 8px;
     border: 2px solid var(--corCinza);
     border-radius: 5px;
     cursor: pointer;
+    color: var(--corCinza);
 }
-
 
 .task-categorias--opcao--prioridade--alta{
     background-color: var(--corRed);
-    color: #fff;
+    color: #fff !important;
     font-weight: bold;
 }
 
 .task-categorias--opcao--prioridade--media{
     background-color: var(--corAmarela);
     font-weight: bold;
-    color: #fff;
+    color: #fff !important;
 }
 
 .task-categorias--opcao--prioridade--baixa{
     background-color: var(--corVerde);
-    color: #fff;
+    color: #fff !important;
     font-weight: bold;
 }
+
+
 
 .task-categoria--text{
     display: flex;
@@ -50,13 +54,15 @@
 .task-categoria--text .task-categoria--text--p{
     margin-right: 1rem;
     padding-right: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 20px;
     margin: 0.5rem 0;
     font-weight: bold;
     border-right: 2px solid var(--corCinza);
+    font-weight: 700;
 }
 
 .task-categoria--text .task-categoria--text--spam{
-    font-weight: 200;
+    font-weight: 400;
     margin-left: 0.5rem;
+    font-size: 1rem;
 }
