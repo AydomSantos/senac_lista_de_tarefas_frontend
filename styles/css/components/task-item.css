@@ -27,21 +27,21 @@
 }
 
 .task-categorias--opcao--prioridade--alta{
-    background-color: var(--corRed);
+    /*background-color: var(--corRed);*/
     color: #fff !important;
     font-weight: bold;
     border: none !important;
 }
 
 .task-categorias--opcao--prioridade--media{
-    background-color: var(--corAmarela);
+    /*background-color: var(--corAmarela);*/
     font-weight: bold;
     color: #fff !important;
     border: none !important;
 }
 
 .task-categorias--opcao--prioridade--baixa{
-    background-color: var(--corVerde);
+    /*background-color: var(--corVerde);*/
     color: #fff !important;
     font-weight: bold;
     border:  none !important;

@@ -1,7 +1,7 @@
 
 // Selecionar todos os elementos com a classe categoria_task
 const vCategoria_array = Array.from(document.querySelectorAll('#prioridade'));
-console.log(vCategoria_array);
+
 
 // Ordenar os elementos com base no conteúdo de texto
 vCategoria_array.sort((a, b) => {
@@ -12,15 +12,10 @@ vCategoria_array.sort((a, b) => {
 // Aplicar o estilo e adicionar os elementos ordenados de volta ao container
 vCategoria_array.forEach((pText) => {
     let vColor;
-    if (pText.textContent === "Alta") {
-        vColor = "#e62c2c";
-    } else if (pText.textContent === "Media") {
-        vColor = "#f5f50e";
-    } else if (pText.textContent === "Baixa") {
-        vColor = "#56ec28";
-    } else {
-        vColor = "defaultColor";
-    }
+    vColor = pText.textContent === "Alta" ? "#e62c2c" :
+         pText.textContent === "Média" ? "#f5f50e" :
+         pText.textContent === "Baixa" ? "#56ec28" : "#000000";
+
     pText.style.background = vColor;
 
 });
