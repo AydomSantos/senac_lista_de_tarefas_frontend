@@ -73,3 +73,7 @@ const vTarefas = [
         "responsavel": ["Thiago", "Vanessa"]
     }
 ]
+
+export default {
+    vTarefas
+};
