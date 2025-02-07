@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/form.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
+    <title>Registro de Tarefas</title>
+</head>
+
+<body>
+    <main class="main">
+        <form class="form">
+            <div class="form__box--um">
+                <label class="form__box--um--label">
+                    Titulo
+                </label><br>
+                <input class="form__box--um--input" type="text">
+                <label for="" class="form__box--um--label">
+                    Descrição
+                </label><br>
+                <textarea class="form__box--um--textarea"></textarea>
+            </div>
+            <div class="form__box--dois">
+                <div class="form__box--dois--flex">
+                    <div class="form__box--dois--flex--box">
+                        <label class="form__box--dois--label">Prioridade</label><br>
+                        <input type="text" class="form__box--dois--input">
+                    </div>
+                    <div class="form__box--dois--flex--box">
+                        <label class="form__box--dois--label">Data</label><br>
+                        <input type="date" class="form__box--dois--input">
+                    </div>
+                </div>
+                <p class="form__box--dois--p">Responsavel (is):</p>
+                <div class="form__box--dois--responsavel">
+                    <div class="form__box--dois--responsavel--box">
+                        <input class="form__box--dois--responsavel--input" type="checkbox"><span
+                            class="form__box--dois--responsavel--span">Alice</span>
+                        <input class="form__box--dois--responsavel--input" type="checkbox"><span
+                            class="form__box--dois--responsavel--span">Carlos</span>
+                        <input class="form__box--dois--responsavel--input" type="checkbox"><span
+                            class="form__box--dois--responsavel--span">Fabiana</span>
+                    </div>
+                    <div class="form__box--dois--responsavel--box">
+                        <input class="form__box--dois--responsavel--input" type="checkbox"><span
+                            class="form__box--dois--responsavel--span">Fernando</span>
+                        <input class="form__box--dois--responsavel--input" type="checkbox"><span
+                            class="form__box--dois--responsavel--span">Luisa</span>
+                        <input class="form__box--dois--responsavel--input" type="checkbox"><span
+                            class="form__box--dois--responsavel--span">Marcos</span>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </form>
+        <div class="form__box--btn">
+            <button class="form__box--btn--limpa">
+                Limpar
+            </button>
+            <button class="form__box--btn--adcionar">
+                Adicionar
+            </button>
+        </div>
+    </main>
+
+    <script src="script/main.js"></script>
+</body>
+
+</html>

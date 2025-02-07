@@ -1,3 +1,4 @@
+const dadosTarefas = require("./constantes");
 
 // Selecionar todos os elementos com a classe categoria_task
 const vCategoria_array = Array.from(document.querySelectorAll('#prioridade'));
