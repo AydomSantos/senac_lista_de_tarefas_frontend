@@ -38,6 +38,7 @@ form {
     border: 2px solid var(--corPreta);
     border-radius: 5px;
     margin-bottom: 1rem;
+   
 }
 
 .form__box--um .form__box--um--textarea {

@@ -1,44 +1,73 @@
-const dadosTarefas = require("./constantes");
+import dadosTarefas from "./constantes.js";
 
-// Selecionar todos os elementos com a classe categoria_task
-const vCategoria_array = Array.from(document.querySelectorAll('#prioridade'));
-
-
-// Ordenar os elementos com base no conteúdo de texto
-vCategoria_array.sort((a, b) => {
-    const vPrioridade = ["Alta", "Media", "Baixa"];
-    return vPrioridade.indexOf(a.textContent) - vPrioridade.indexOf(b.textContent);
-});
-
-// Aplicar o estilo e adicionar os elementos ordenados de volta ao container
-vCategoria_array.forEach((pText) => {
-    let vColor;
-    vColor = pText.textContent === "Alta" ? "#e62c2c" :
-        pText.textContent === "Média" ? "#f5f50e" :
-            pText.textContent === "Baixa" ? "#56ec28" : "#000000";
-
-    pText.style.background = vColor;
-
-});
-
+// Selecionar elementos pela classe
 const tarefasContainer = document.querySelector(".container__tarefas");
-tarefasContainer.innerHTML = `
-    <div class="tasks">
-        <div class="task-categorias--container">
-          <div id="prioridade" class="task-categorias--opcao--prioridade--alta">Alta</div>
-          <div class="task-categorias--opcao--data">12/12/2012</div>
-          <div class="task-categorias--opcao--pessoa">Luisa</div>
-          <div class="task-categorias--opcao--pessoa">Fabiana</div>
-        </div>
-        <div class="task-categoria--text">
-          <p class="task-categoria--text--p">Revisar código crítico</p>
-          <span class="task-categoria--text--spam"
-            >Revisar bugs criticos no módulo principal</span
-          >
-        </div>
-    </div>
 
-`
+// Verificar se dadosTarefas é um array válido
+if (!Array.isArray(dadosTarefas)) {
+    console.error("dadosTarefas não é um array válido. Verifique o arquivo constantes.js.");
+    dadosTarefas = []; 
+}
 
+// Função para aplicar classes de estilo com base na prioridade
+function aplicarEstilosPrioridade() {
+    const prioridadesElements = document.querySelectorAll('.prioridade');
+    prioridadesElements.forEach(elemento => {
+        if (elemento.textContent.trim() === 'Alta') {
+            elemento.style.backgroundColor = "#e62c2c";
+        } else if (elemento.textContent.trim() === "Média") {
+            elemento.style.backgroundColor = "#f5f50e";
+        } else if (elemento.textContent.trim() === "Baixa") {
+            elemento.style.backgroundColor = "#56ec28";
+        }
+    });
+}
 
+// Função para gerar conteúdo dinâmico
+function gerarConteudoDinamico(tarefas) {
+    return tarefas.map(tarefa => {
+        // Verificar se a tarefa tem a estrutura esperada
+        if (!tarefa || !tarefa.prioridade || !tarefa.data || !tarefa.responsavel || !tarefa.titulo || !tarefa.descricao) {
+            console.warn("Tarefa com estrutura inválida:", tarefa);
+            return ''; 
+        }
 
+        // Verificar se responsavel é um array
+        if (!Array.isArray(tarefa.responsavel)) {
+            console.warn("A propriedade 'responsavel' não é um array na tarefa:", tarefa);
+            return ''; 
+        }
+
+        // Determinar a classe de cor de fundo com base na prioridade
+        const prioridadeClass = `prioridade-${tarefa.prioridade.toLowerCase()}`;
+
+        return `
+            <div class="tasks ${prioridadeClass}">
+                <div class="task-categorias--container">
+                    <div class="prioridade">${tarefa.prioridade}</div>
+                    <div class="task-categorias--opcao--data">${tarefa.data}</div>
+                    ${tarefa.responsavel.map(resp => `
+                        <div class="task-categorias--opcao--pessoa">${resp}</div>
+                    `).join('')}
+                </div>
+                <div class="task-categoria--text">
+                    <p class="task-categoria--text--p">${tarefa.titulo}</p>
+                    <span class="task-categoria--text--spam">${tarefa.descricao}</span>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// Gerar conteúdo dinâmico
+const tasksHTML = gerarConteudoDinamico(dadosTarefas);
+
+// Inserir o conteúdo gerado no container
+if (tarefasContainer) {
+    tarefasContainer.innerHTML = tasksHTML;
+
+    // Aplicar estilos de prioridade após inserir o conteúdo no DOM
+    aplicarEstilosPrioridade();
+} else {
+    console.error("Elemento .container__tarefas não encontrado.");
+}
