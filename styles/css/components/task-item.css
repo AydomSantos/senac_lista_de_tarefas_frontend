@@ -16,14 +16,13 @@
     
 }
 
-
-
 .task-categorias--container div{
     padding: 4px 8px 4px 8px;
     border: 2px solid var(--corCinza);
     border-radius: 5px;
     cursor: pointer;
-    color: var(--corCinza);
+    color: #a0a0a0;
+    font-weight: 500;
     
 }
 
